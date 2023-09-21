@@ -69,3 +69,21 @@ Garder à l'esprit que cette approche est simplifiée et qu'il peut y avoir des 
 ==================================================================================================================================================================================================
 L'objectif est de créer une pipeline qui transforme les données brutes en un modèle capable de détecter les intrusions dans les réseaux.
 ==================================================================================================================================================================================================
+
+
+Contient des fichiers d'analyse de données exploratoires, des modèles de détection d'intrusion réseau et de classification des attaques pour le problème décrit ci-dessous -
+
+La détection des intrusions sur le réseau et la catégorisation des attaques sont un domaine de recherche actif, mais l'un des problèmes majeurs auxquels sont confrontés les chercheurs est l'indisponibilité d'ensembles de données simulant le trafic réseau moderne. Il existe plusieurs autres ensembles de données disponibles, tels que KD98, KDDCUP99 ( KDD Cup 1999 Data ) qui ont été générés dans le but de développer des systèmes de détection d'intrusion réseau capables de détecter la différence entre les « mauvaises » intrusions réseau et les « bonnes » connexions réseau, mais ces ensembles de données ont été générés il y a environ 20 ans et ne représentent pas de manière adéquate le trafic réseau généré par les ordinateurs modernes.
+
+L'ensemble de données UNSW-NB15 a été créé dans le but de combler cette lacune.
+
+L'ensemble de données contient 9 types d'attaques, à savoir Fuzzers, Analysis, Backdoors, DoS, Exploits, Generic, Reconnaissance, Shellcode et Worms.
+
+Dans les fichiers ipynb, une EDA détaillée est effectuée ainsi que les performances de conception et d'analyse de divers modèles de détection d'intrusion réseau et de classification des attaques.
+=========================================================================================================================================
+SYNTHESE ET OBJECTIF DU PROJET :
+
+En préambule, nous avons scrappé un site de cybersecurité, afin de pouvoir faire une analyse descriptive de l etat des attaques et surtout une donnée manquante : les couts en dollars.
+Apres la concatenation des fichiers csv dans knime nous avons obtnu un fichier csv qui nous a permis de progresser avec un collab pour pour explorer et preparer un machine learning KNN (classification binaire) qui s'impose compte tenu de la nature du dataset si ce modele ne fonctionne pas nous allons utiler l'algorithme DBSCAM (classification multiple avec 10 classe dont la derniere sera "pas d'attaques') et enfin nous allons deployer l interface de reconnaissance d'intrusion dans streamlit.
+
+==========================================================================================================================================
